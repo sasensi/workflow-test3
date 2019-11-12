@@ -15,4 +15,6 @@ jobs:
     - name: increment counter
       run: echo $(($(cat counter) + 1)) > counter
     - name: push
-      run: git push HEAD:master
+      run: |
+        git git remote -v
+        git origin push HEAD:master
