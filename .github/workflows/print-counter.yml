@@ -1,4 +1,4 @@
-name: Print Coounter
+name: Print Counter
 
 on: [push]
 
