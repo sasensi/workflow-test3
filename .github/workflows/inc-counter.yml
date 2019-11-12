@@ -1,0 +1,17 @@
+name: Increment Counter
+
+on:
+  schedule:
+    - cron: '* * * * *'
+
+jobs:
+  inc_counter:
+    steps:
+    - name: do checkout
+      uses: actions/checkout@v1
+      with:
+        ref: master
+    - name: increment counter
+      run: echo $(($(cat counter) + 1)) > counter
+    - name: push
+      run: git push 
