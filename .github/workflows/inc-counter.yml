@@ -6,6 +6,7 @@ on:
 
 jobs:
   inc_counter:
+    runs-on: [ubuntu-latest]
     steps:
     - name: do checkout
       uses: actions/checkout@v1
