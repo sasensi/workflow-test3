@@ -14,7 +14,9 @@ jobs:
       with:
         ref: master
     - name: increment counter
-      run: echo $(($(cat counter) + 1)) > counter
+      run: | 
+        echo $(($(cat counter) + 1)) > counter
+        git commit -m "increment counter" counter
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
