@@ -1,9 +1,8 @@
 name: Increment Counter
 
 on:
-  push: {}
   schedule:
-    - cron: '* * * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   inc_counter:
