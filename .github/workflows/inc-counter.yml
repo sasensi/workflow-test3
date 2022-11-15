@@ -21,7 +21,7 @@ jobs:
         git config --local user.name "GitHub Action"
         echo $(($(cat counter) + 1)) > counter
         git commit -m "increment counter" counter
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.MY_TOKEN }}
+   # - name: Push changes
+   #   uses: ad-m/github-push-action@master
+   #   with:
+   #     github_token: ${{ secrets.MY_TOKEN }}

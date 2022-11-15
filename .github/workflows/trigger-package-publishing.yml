@@ -1,0 +1,23 @@
+name: Node.js Package Publishing Trigger
+
+on:
+  push: {}
+
+jobs:
+  trigger-package-publishing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: yarn install
+      - name: Configure committer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Release
+        run: yarn release
