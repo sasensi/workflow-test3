@@ -23,4 +23,8 @@ jobs:
       - name: Checkout master
         run: git checkout master
       - name: Release
-        run: yarn release
+        run: yarn release-for-ci
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.MY_TOKEN }}
