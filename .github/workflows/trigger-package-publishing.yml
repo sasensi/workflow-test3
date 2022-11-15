@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: do checkout
         uses: actions/checkout@v1
-        with:
-          ref: master
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
