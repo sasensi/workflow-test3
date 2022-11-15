@@ -1,7 +1,8 @@
 name: Node.js Package Publishing Trigger
 
 on:
-  push: {}
+  push:
+    branch: [develop]
 
 jobs:
   trigger-package-publishing:
