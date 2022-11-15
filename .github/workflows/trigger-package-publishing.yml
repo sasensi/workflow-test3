@@ -2,8 +2,8 @@ name: Node.js Package Publishing Trigger
 
 on:
   push:
-    paths:
-      - 'trigger.js'
+    branches:
+      - develop
 
 jobs:
   trigger-package-publishing:
