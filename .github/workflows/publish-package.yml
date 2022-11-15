@@ -1,0 +1,12 @@
+name: Node.js Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish-gpr:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "it worked !"
