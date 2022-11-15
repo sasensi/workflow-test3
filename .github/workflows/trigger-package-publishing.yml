@@ -26,8 +26,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Release
-        run: yarn release-for-ci
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.MY_TOKEN }}
+        run: yarn release
+  call-workflow:
+    needs: trigger-package-publishing
+    uses: ./.github/workflows/callable.yml
