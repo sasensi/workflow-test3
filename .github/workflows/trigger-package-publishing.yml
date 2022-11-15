@@ -7,8 +7,10 @@ jobs:
   trigger-package-publishing:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: do checkout
+        uses: actions/checkout@v1
+        with:
+          ref: master
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
@@ -21,3 +23,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Release
         run: yarn release
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.MY_TOKEN }}

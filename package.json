@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "standard-version",
-    "postrelease": "git push --follow-tags --no-verify"
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
