@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: do checkout
         uses: actions/checkout@v2
-        with:
-          ref: master
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
@@ -22,5 +20,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Checkout master
+        run: git checkout master
       - name: Release
         run: yarn release
