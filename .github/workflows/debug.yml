@@ -36,3 +36,6 @@ jobs:
 
       - name: Compute with expression
         run: echo "Is release ? ${{ startsWith(github.head_commit.message, 'chore(release):') }}"
+
+      - name: Compute with expression 2
+        run: echo "Is release ? ${{ !startsWith(github.head_commit.message, 'chore(release):') }}"
