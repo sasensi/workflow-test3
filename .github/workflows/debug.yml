@@ -33,3 +33,6 @@ jobs:
 
       - name: Get the output
         run: echo "Is release ? ${{ steps.hello.outputs.isRelease }}"
+
+      - name: Compute with expression
+        run: echo "Is release ? ${{ startsWith(github.head_commit.message, 'chore(release):') }}"
