@@ -1,0 +1,13 @@
+name: Callable
+
+on:
+  repository_dispatch:
+    types:
+      - mytype
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "hello"

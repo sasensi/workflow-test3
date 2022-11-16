@@ -1,0 +1,21 @@
+name: Caller
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  call:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do webhook request
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://api.github.com/repos/sasensi/workflow-test-webhook/dispatches'
+          method: 'POST'
+          customHeaders: '{"Authorization": "token ${{ secrets.MY_TOKEN }}"}'
+          data: '{"event_type": "converter-published"}'

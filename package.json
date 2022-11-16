@@ -1,0 +1,26 @@
+{
+  "name": "workflow-playground",
+  "version": "1.0.27",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "release-for-ci": "standard-version",
+    "postrelease": "git push --follow-tags --no-verify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sasensi/workflow-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sasensi/workflow-playground/issues"
+  },
+  "homepage": "https://github.com/sasensi/workflow-playground#readme",
+  "dependencies": {
+    "standard-version": "^9.5.0"
+  }
+}
