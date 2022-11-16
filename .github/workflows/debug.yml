@@ -27,6 +27,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run debug 1
+        run: node debug1.js
+
+      - name: Run debug 2
+        run: node debug2.js
+
       - name: Hello world action step
         uses: ./.github/actions/hello-world/
         id: hello
