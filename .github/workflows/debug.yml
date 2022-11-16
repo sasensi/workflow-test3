@@ -16,26 +16,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Use node.js 16
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-
-      - name: Install action dependencies
-        run: npm install
-        working-directory: ./.github/actions/hello-world/
-
-      - name: Hello world action step
-        uses: ./.github/actions/hello-world/
-        id: hello
-        with:
-          who-to-greet: 'Mona the Octocat'
-
-      - name: Get the output
-        run: echo "Is release ? ${{ steps.hello.outputs.isRelease }}"
-
-      - name: Compute with expression
-        run: echo "Is release ? ${{ startsWith(github.head_commit.message, 'chore(release):') }}"
-
       - name: Compute with expression 2
         run: echo "Is release ? ${{ !startsWith(github.head_commit.message, 'chore(release):') }}"
+
+      - name: Do only if not release
+        run: echo "Is release ? ${{ !startsWith(github.head_commit.message, 'chore(release):') }}"
+        if: ${{ !startsWith(github.head_commit.message, 'chore(release):') }}
+
+      - name: Do only if release
+        run: echo "Is release ? ${{ !startsWith(github.head_commit.message, 'chore(release):') }}"
+        if: ${{ startsWith(github.head_commit.message, 'chore(release):') }}
