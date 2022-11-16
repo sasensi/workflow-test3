@@ -21,20 +21,9 @@ jobs:
         with:
           node-version: 16
 
-      - name: Change directory
-        run: cd ./.github/actions/hello-world/
-
-      - name: Install dependencies
+      - name: Install action dependencies
         run: npm install
-
-      - name: Run ls
-        run: ls
-
-      - name: Run debug 1
-        run: node debug1.js
-
-      - name: Run debug 2
-        run: node debug2.js
+        working-directory: ./.github/actions/hello-world/
 
       - name: Hello world action step
         uses: ./.github/actions/hello-world/
