@@ -16,6 +16,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Use node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Change directory
+        run: cd ./.github/actions/hello-world/
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Hello world action step
         uses: ./.github/actions/hello-world/
         id: hello
